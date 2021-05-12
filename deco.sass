@@ -14,19 +14,30 @@ html, body
   margin: 0
   padding: 0
   background-color: $poutPorri
-  display: inline-flex
-  flex-direction: column
+  display: flex
+  // justify-content: center
+  // align-items: center
 
 ::-webkit-scrollbar
   display: none
 
 #sideFlowr
-  // position: absolute
-  padding: 1em
+  position: absolute
+  padding: 2em
   width: 45vw
   height: 110vh
   position: fixed
 
 #sideFlowr path
   stroke-dasharray: 44828px
-  stroke-dashoffset: 44828px
+  stroke-dashoffset: 44768px
+
+.text
+  display: grid
+  grid-template-columns: 1fr 1fr
+  margin: 20vh 10vw 0 0vw
+  text-align: center
+  p
+    grid-column: 2
+    font-family: Tangerine
+    font-size: 30px
