@@ -1,1 +1,1 @@
-html,body{margin:0;padding:0;background-color:#eddcd2}::-webkit-scrollbar{display:none}#sideFlowr{position:absolute;padding:1em;width:45vw;height:100vh}#sideFlowr path{stroke-dasharray:44828px;stroke-dashoffset:44825px}/*# sourceMappingURL=deco.css.map */
+*{box-sizing:border-box}html,body{margin:0;padding:0;background-color:#eddcd2;display:inline-flex;flex-direction:column}::-webkit-scrollbar{display:none}#sideFlowr{padding:1em;width:45vw;height:110vh;position:fixed}#sideFlowr path{stroke-dasharray:44828px;stroke-dashoffset:44828px}/*# sourceMappingURL=deco.css.map */
