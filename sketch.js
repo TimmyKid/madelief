@@ -14,6 +14,9 @@ function slideIn() {
 slideIn()
 
 $(window).on('load', () => {
+  var audio = document.getElementById('sound')
+  // gsap.set(audio,{muted: false})
+    audio.play()
   var timeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.text',
