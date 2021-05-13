@@ -2,21 +2,26 @@ const sideFlwr = document.querySelector('#sideFlowr path');
 console.log(sideFlwr.getTotalLength())
 
 $(window).on('load', () => {
-  var timeline = gsap.timeline({scrollTrigger : {
-    scrub: 2,
-    markers: true,
-    trigger: sideFlwr,
-    start: 'top top',
-    end: 'bottom top'
-    // scroller: ".text",
+  var timeline = gsap.timeline({defaults: {
+    scrollTrigger: {
+      trigger: '.text',
+      scrub: 2,
+    }
   }})
-    .to(sideFlwr, {
-      strokeDashoffset: 0, duration: 40000, ease: 'circ.easeIn'
-    })
-    .fromTo(sideFlwr,{fill: 'transparent'}, { duration: 2, fill: "#355070", ease: "power1"})
-    gsap.to($('.text'), {
-      scrollTrigger: {
-        scrub: 2,
-        autoPlay: true
-      },yPercent: '-50', duration: 20, ease: 'circ.easeOut'}, "<")
+    .to($('.text'),{yPercent: '-80', duration: 100, ease: 'power4.easeOut'})
+    .to(sideFlwr, {strokeDashoffset: 0, duration: 50, ease: 'power4.easeOut'},"<")
+
+    // .to(sideFlwr, { scrollTrigger: {
+    //   trigger: sideFlwr,
+    //   markers: true,
+    //   pin: true,
+    //   start: "top top",
+    // }, strokeDashoffset: 0, duration: 10, ease: 'circ.easeIn' })
+
+    // .fromTo(sideFlwr,{ fill: 'transparent' }, { duration: 2, fill: "#d2e3ed", ease:"power1"})
+
+    // .to($('.text'), {
+    //   scrollTrigger: {
+    //     scrub: 2,
+    //   },yPercent: '-60', duration: 20, ease: 'circ.easeOut', autoPlay: 'true'}, "<")
 })
