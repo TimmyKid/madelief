@@ -8,8 +8,6 @@ $(window).on('load', () => {
       start: '-5% top',
       markers: true,
       scrub: 1,
-      pin: sideFlwr,
-      pinSpacing: false
     }
   })
     .to($('.text'),{yPercent: '-80', duration: 9, ease: 'power4.easeOut'})
