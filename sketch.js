@@ -5,7 +5,17 @@ console.log(sideFlwr.getTotalLength());
 
 cursor = document.querySelector('.cuSor')
 document.addEventListener("mousemove", e => {
-  cursor.setAttribute( "style", "left: "+(e.clientX - 17.5)+"px; top:"+(e.clientY - 17.5)+"px;");
+  xPos = e.clientX;
+  yPos = e.clientY;
+  $img = $('.shadow')
+  //cursorAction
+  cursor.setAttribute( "style", "left: "+(xPos- 17.5)+"px; top:"+(yPos- 17.5)+"px;");
+
+  //Shadow effect
+  mauseX = (xPos/$(window).width()-0.5);
+  mauseY = (yPos/$(window).width()-0.5);
+  console.log([mauseX,mauseY])
+  gsap.to($('#shadow'),{rotationY: mauseX * 1.2, rotationX: mauseY* 0.4, skewX: mauseX* 0.1, skewY: mauseY * -2.2 , ease: 'power1.easeOut', transformPerspective: 450, transformOrigin: 'center'})
 });
 
 gsap.to($('.abstract_shadows img'), {})
@@ -20,16 +30,14 @@ $(window).on('load', () => {
   const audio = new Howl({
     src: ['./static/audio/Butterfly.mp3'],
     loop: true,
-    volume: 0.4,
+    volume: 0.2,
     autoplay: true,
   });
 
-  var loading = gsap.timeline({onComplete: () => {
-    loading.paused = true
-  }})
-    .fromTo(loadFlwr,{strokeDashoffset: 26100, fill: 'transparent'},{ strokeDashoffset: 23100, repeat: -1, yoyo: true, duration: 5 })
-    .to($('.preload p'),{autoAlpha: .5, yoyo: true, duration: .7, repeat: -1},"<")
-    .to($('.preload'),{autoAlpha: 0, duration: 1.5, ease:"circ.easeOut", delay: 10},"<");
+  // var loading = gsap.timeline({ paused: true})
+  //   .fromTo(loadFlwr,{strokeDashoffset: 26100, fill: 'transparent'},{ strokeDashoffset: 23100, repeat: -1, yoyo: true, duration: 5 })
+  //   .to($('.preload p'),{autoAlpha: .5, yoyo: true, duration: .7, repeat: -1},"<")
+  //   .to($('.preload'),{autoAlpha: 0, duration: 1.5, ease:"circ.easeOut", delay: 10},"<");
 
   var timeline = gsap.timeline({
     scrollTrigger: {
