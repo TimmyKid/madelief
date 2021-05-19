@@ -1,11 +1,14 @@
 const sideFlwr = document.querySelector('#sideFlowr path');
 console.log(sideFlwr.getTotalLength());
 
-var loading = gsap.timeline({})
-  .fromTo(loadFlwr,{strokeDashoffset: 26100, fill: 'transparent'},{ strokeDashoffset: 23100, repeat: -1, yoyo: true, duration: 5 })
-  .to($('.preload p'),{autoAlpha: .5, yoyo: true, duration: .7, repeat: -1},"<")
-  .to($('.preload'),{autoAlpha: 0, duration: 1.5, ease:"circ.easeOut", delay: 10},"<");
+//Mouse-client position
 
+cursor = document.querySelector('.cuSor')
+document.addEventListener("mousemove", e => {
+  cursor.setAttribute( "style", "left: "+(e.clientX - 17.5)+"px; top:"+(e.clientY - 17.5)+"px;");
+});
+
+gsap.to($('.abstract_shadows img'), {})
 // loading.pause()
 // function slideIn() {
 //   gsap.from($('svg, .text'),{xPercent: '-10', ease: 'SlowMo.easeOut', duration: 2})
@@ -20,6 +23,14 @@ $(window).on('load', () => {
     volume: 0.4,
     autoplay: true,
   });
+
+  var loading = gsap.timeline({onComplete: () => {
+    loading.paused = true
+  }})
+    .fromTo(loadFlwr,{strokeDashoffset: 26100, fill: 'transparent'},{ strokeDashoffset: 23100, repeat: -1, yoyo: true, duration: 5 })
+    .to($('.preload p'),{autoAlpha: .5, yoyo: true, duration: .7, repeat: -1},"<")
+    .to($('.preload'),{autoAlpha: 0, duration: 1.5, ease:"circ.easeOut", delay: 10},"<");
+
   var timeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.text',
@@ -47,5 +58,7 @@ $(window).on('load', () => {
       clickr = 1;
     }
   });
-
+  let cicket = ["🥚","🐓"]
+  console.log(cicket)
+  console.log(cicket.sort())
 })

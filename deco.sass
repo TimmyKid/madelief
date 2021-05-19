@@ -13,11 +13,25 @@ $bg-img: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDA
 
 *
   box-sizing: border-box
+  cursor: pointer
 p
   font-family: $primary
-  font-size: 2vw
+  font-size: 2.2vw
 ::-webkit-scrollbar
   display: none
+.cuSor
+  position: fixed
+  width: 40px
+  height: 40px
+  background-color: lighten($tapestry,20%)
+  pointer-events: none
+  border: 1px solid #1d1d1d
+  border-radius: 50%
+  backdrop-filter: invert(45deg)
+  // transition: transform 0.2s
+  transition: height 1s cubic-bezier(0.46,0.03,0.52,0.96), width 1s cubic-bezier(0.46,0.03,0.52,0.96)
+  // transition-timing-function: ease-out
+
 
 .preload
   position: fixed
@@ -31,8 +45,8 @@ p
   justify-content: center
   align-items: center
   svg
-    height: 50%
-    width: 50%
+    height: 45%
+    width: 45%
     path
       stroke-dasharray: 26172px
   p
@@ -59,7 +73,8 @@ html, body
   mix-blend-mode: multiply
   pointer-events: none
   img
-    opacity: 0.35
+    position: absolute
+    opacity: 0.5
     width: 100vw
     height: 100vh
     transform: scalex(1.2) skewX(0deg) rotateY(2deg) translateX(-8%)
@@ -93,8 +108,16 @@ html, body
   bottom: 0
   right: 0
   margin: 0 2em -7em 0
+  z-index: 11
   // margin-top: -5vh
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px)
-// .text p
-  font-size: 20px
+  .preload p
+    margin-left: .5em
+  .text
+    margin: 20vh 12vw 0 -15vw
+  p
+    font-size: 6vw
+  #wave
+    margin: 0 .3em -8.5em 0
+    width: 2em
