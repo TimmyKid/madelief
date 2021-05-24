@@ -23,7 +23,7 @@ p
   position: fixed
   width: 40px
   height: 40px
-  background-color: lighten($tapestry,20%)
+  background-color: lighten(grey,20%)
   pointer-events: none
   border: 1px solid #1d1d1d
   border-radius: 50%
@@ -31,7 +31,6 @@ p
   // transition: transform 0.2s
   transition: height 1s cubic-bezier(0.46,0.03,0.52,0.96), width 1s cubic-bezier(0.46,0.03,0.52,0.96)
   // transition-timing-function: ease-out
-
 
 .preload
   position: fixed
@@ -80,6 +79,19 @@ html, body
     width: 102vw
     height: 102vh
     transform: scalex(1.2)skewX(0deg) rotateY(2deg) translate(-50%,-50%)
+
+.jumbotron
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 20vh
+  transform: translateX(65%) skewX(-2deg)
+  // background: transparent
+
+// .hide-texts
+//   background: transparent url("../img/headermask00.png")
+//   background-size: cover
 
 #sideFlowr
   position: absolute
